@@ -2,7 +2,7 @@
 
 /**
  * binary_tree_preorder - Preorder traversal
- * func: function pointer to print the values
+ * @func: function pointer to print the values
  * @tree: ponter to the root node
  * Return: Nothing
  */
