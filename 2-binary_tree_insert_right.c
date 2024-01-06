@@ -1,8 +1,8 @@
 #include "binary_trees.h"
 /**
 * binary_tree_insert_right - inserts a node as the left child of another node
-* parent - points to the parent node to insert left child in
-* value - value to store in the new node
+* @parent: points to the parent node to insert left child in
+* @value: value to store in the new node
 * Return: new node
 */
 
