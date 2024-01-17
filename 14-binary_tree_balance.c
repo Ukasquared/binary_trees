@@ -5,14 +5,35 @@
  * Return: balance factor
  */
 
+size_t binary_tree_height(const binary_tree_t *tree);
+
 int binary_tree_balance(const binary_tree_t *tree)
 {
-	size_t l, r, bal_factor = 0;
+	size_t l, r;
 
 	if (tree == NULL)
 		return (0);
-	l = binary_tree_balance(tree->left);
-	r = binary_tree_balance(tree->right);
-	bal_factor += l - r;
-	return (bal_factor);
+	if (tree->left == NULL && tree->right == NULL)
+		return (0);
+	l = binary_tree_height(tree->left);
+	r = binary_tree_height(tree->right);
+	return (l - r);
+}
+
+/**
+ * binary_tree_height - Calculate the height of a binary tree
+ * @tree: Pointer to the root node of the tree
+ * Return: Height of the tree
+ */
+size_t binary_tree_height(const binary_tree_t *tree)
+{
+    size_t l_height, r_height;
+
+    if (tree == NULL)
+        return (0);
+
+    l_height = binary_tree_height(tree->left);
+    r_height = binary_tree_height(tree->right);
+
+    return ((l_height > r_height ? l_height : r_height) + 1);
 }
